@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="dashboard col m-3 p-1 text-center">Weather Dashboard</h1>
+        </div>
+        <div class="row">
+            <form class="col-3">
+                <div class="search-input">
+                    <label class="form-label">Search for a City:</label>
+                    <input type="search" class="form-control" id="locationInput" placeholder="Search">
+                </div>
+                <button onclick="currentWeather()" type="button" class=" mt-1 btn btn-primary">Search</button>
+            </form>
+            <div class="display-weather col-9 border border-secondary">
+                <h3 class="city"></h3>
+                <p class="temp"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+                <p class="uv"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="search-history col-3  ">
+                <h5 class=" mt-2 text-center">Recent Searches:</h5>
+                <div class="recent-cities"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Assets/JavaScript/script.js"></script>
+</body>
+
+</html>
