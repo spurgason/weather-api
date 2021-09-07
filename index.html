@@ -13,8 +13,8 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <h1 class="dashboard col m-3 p-1 text-center">Weather Dashboard</h1>
+        <div class="row Dashboard">
+            <h1 class="col m-3 p-1 text-center">Weather Dashboard</h1>
         </div>
         <div class="row">
             <form class="col-3">
@@ -33,16 +33,56 @@
             </div>
         </div>
         <div class="row">
-            <div class="search-history col-3  ">
+            <div class="search-history col-3">
                 <h5 class=" mt-2 text-center">Recent Searches:</h5>
                 <div class="recent-cities"></div>
             </div>
-        </div>
-    </div>
+            <div class="five-day-forecast col-9">
+                <h3>5-Day Forecast</h3>
+                <div class="row cards">
+                    <div class=" day-one-card col">
+                        <h5 class="date-1">Date</h5>
+                        <p class="temp-1">Temp</p>
+                        <p class="wind-1">Wind</p>
+                        <p class="humidity-1">Humidity</p>
+                    </div>
+                    <div class="day-2-card col">
+                        <h5 class="date-2">Date</h5>
+                        <p class="temp-2">Temp</p>
+                        <p class="wind-2">Wind</p>
+                        <p class="humidity-2">Humidity</p>
+                    </div>
+                    <div class="day-3-card col">
+                        <h5 class="date-3">Date</h5>
+                        <p class="temp-3">Temp</p>
+                        <p class="wind-3">Wind</p>
+                        <p class="humidity-3">Humidity</p>
+                    </div>
+                    <div class="day-4-card col">
+                        <h5 class="date-4">Date</h5>
+                        <p class="temp-4">Temp</p>
+                        <p class="wind-4">Wind</p>
+                        <p class="humidity-4">Humidity</p>
+                    </div>
+                    <div class="day-5-card col">
+                        <h5 class="date-5">Date</h5>
+                        <p class="temp-5">Temp</p>
+                        <p class="wind-5">Wind</p>
+                        <p class="humidity-5">Humidity</p>
+                    </div>
+                </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="Assets/JavaScript/script.js"></script>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="Assets/JavaScript/script.js"></script>
 </body>
 
 </html>
