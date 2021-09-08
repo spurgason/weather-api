@@ -1,0 +1,19 @@
+:root{
+    --main-color: 
+    --dashboard:
+    --card-color:
+
+}
+
+.Dashboard{
+    background-image: linear-gradient(to bottom right, lightblue, lightgrey);
+}
+
+.cards{
+    background-color: #5bc0de;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 15px; 
+   
+}
+

@@ -1,4 +1,5 @@
 let currentDate = moment().format('l');
+let searchCity = document.getElementById('locationInput').value;
 
 function currentWeather() {
 
@@ -14,6 +15,7 @@ function currentWeather() {
             return responce.json();
         })
         .then(function (responce) {
+            
             // Gets data for current weather
             let todayCity = responce.name;
             let todayIcon = responce.weather.icon;
@@ -21,21 +23,43 @@ function currentWeather() {
             let todayWind = responce.wind.speed;
             let todayHumidity = responce.main.humidity;
 
-            // Empty out divs
-            $('.city').innerHTML = '';
-            $('.temp').innerHTML = '';
-            $('.wind').innerHTML = '';
-            $('.humidity').innerHTML = '';
-            $('.uv').innerHTML = '';
-
             // Displays weather data
             $('.city').text(todayCity + ' ' + todayIcon + ' ' + currentDate);
             $('.temp').text('Temp: ' + todayTemp + ' °F');
             $('.humidity').text('Humidity ' + todayHumidity + '%');
             $('.wind').text('Wind: ' + todayWind + ' MPH');
-            $('.uv').text('UV Index:');
+            
 
-        }); fiveDayForecast()
+            let lon=responce.coord.lon
+            let lat=responce.coord.lat
+            fetch(
+                'https://api.openweathermap.org/data/2.5/onecall?lat='+
+                lat +
+                '&lon=' +
+                lon +
+                '&appid=668cdb30df14e3d9284e2e3a36347615'
+            )
+            .then(function(responce){
+                return responce.json();
+            })
+            .then(function(data){
+                let uvIndex = data.current.uvi
+                $('.uv').text('UV Index: ' + uvIndex);
+                
+                if (data.current.uvi < 4) {
+                    alert('good')
+                }if (data.current.uvi < 8) {
+                   alert('bad')
+                } else {
+                    alert('not good')
+                }
+                
+            })
+
+        }); 
+        fiveDayForecast()
+        
+        
 }
 
 function fiveDayForecast() {
@@ -59,12 +83,6 @@ function fiveDayForecast() {
             let oneDayWind = data.list[5].wind.speed
             let oneDayHum = data.list[5].main.humidity
 
-            // Empty Out <p>
-            $('.date-1').innerHTML = '';
-            $('.temp-1').innerHTML = '';
-            $('.wind-1').innerHTML = '';
-            $('.humidity-1').innerHTML = '';
-
             // Display Data
             $('.date-1').text(moment().add(1, 'days').format('l'))
             $('.temp-1').text('Temp ' + oneDayTemp + ' °F')
@@ -75,11 +93,6 @@ function fiveDayForecast() {
             let dayTwoTemp = data.list[13].main.temp
             let dayTwoWind = data.list[13].wind.speed
             let dayTwoHum = data.list[13].main.humidity
-
-            // Empty Out <p>
-            $('.temp-2').innerHTML = '';
-            $('.wind-2').innerHTML = '';
-            $('.humidity-2').innerHTML = '';
 
             // Display Data
             $('.date-2').text(moment().add(2, 'days').format('l'))
@@ -92,11 +105,6 @@ function fiveDayForecast() {
             let dayThreeWind = data.list[21].wind.speed
             let dayThreeHum = data.list[21].main.humidity
 
-            // Empty Out <p>
-            $('.temp-3').innerHTML = '';
-            $('.wind-3').innerHTML = '';
-            $('.humidity-3').innerHTML = '';
-
             // Display Data
             $('.date-3').text(moment().add(3, 'days').format('l'))
             $('.temp-3').text('Temp ' + dayThreeTemp + ' °F')
@@ -107,11 +115,6 @@ function fiveDayForecast() {
             let dayFourTemp = data.list[29].main.temp
             let dayFourWind = data.list[29].wind.speed
             let dayFourHum = data.list[29].main.humidity
-
-            // Empty Out <p>
-            $('.temp-4').innerHTML = '';
-            $('.wind-4').innerHTML = '';
-            $('.humidity-4').innerHTML = '';
 
             // Display Data
             $('.date-4').text(moment().add(4, 'days').format('l'))
@@ -124,11 +127,6 @@ function fiveDayForecast() {
             let dayFiveWind = data.list[37].wind.speed
             let dayFiveHum = data.list[37].main.humidity
 
-            // Empty Out <p>
-            $('.temp-5').innerHTML = '';
-            $('.wind-5').innerHTML = '';
-            $('.humidity-5').innerHTML = '';
-
             // Display Data
             $('.date-5').text(moment().add(5, 'days').format('l'))
             $('.temp-5').text('Temp ' + dayFiveTemp + ' °F')
@@ -137,3 +135,36 @@ function fiveDayForecast() {
         })
 
 }
+
+// Search History
+let searchHistory = JSON.parse(localStorage.getItem('cities')) || [];
+
+
+function renderSearchHistory(searchHistory) {
+    $('.recent-cities').text("")
+    for (let i = 0; i < searchHistory.length; i++) {
+        const recentCity = $('<button>');
+        recentCity.attr("type", "text");
+        recentCity.attr("readonly", true);
+        recentCity.attr("class", "form-control d-block bg-white");
+        recentCity.text(searchHistory[i]);
+        $('.recent-cities').append(recentCity); 
+        // recentCity.addEventListener("click", function () {
+        //     currentWeather(recentCity.value);
+        // })
+    } 
+   
+}
+
+$('.btn').on('click', function(event){
+    event.preventDefault();
+    let searchedCity = $('#locationInput')
+    .val()
+    .trim();
+    searchHistory.push(searchedCity)
+    renderSearchHistory(searchHistory)
+    localStorage.setItem('cities', JSON.stringify(searchHistory))
+    $('#locationInput').val('')
+})
+
+renderSearchHistory(searchHistory)
