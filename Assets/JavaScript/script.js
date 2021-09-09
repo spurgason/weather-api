@@ -4,7 +4,8 @@ let searchCity = document.getElementById('locationInput').value;
 function currentWeather(recentCity) {
 
     let searchCity = document.getElementById('locationInput').value || recentCity; 
-
+    
+    // Fetches API for current day
     fetch(
         'https://api.openweathermap.org/data/2.5/weather?q=' +
         searchCity +
@@ -23,14 +24,15 @@ function currentWeather(recentCity) {
             let todayHumidity = responce.main.humidity;
             let todayIcon = responce.weather[0].icon;
             
-            // Displays weather dataßß
+            // Displays weather data
             $('.city').text(todayCity + '  ' + currentDate);
             $('.icon').attr('src', "https://openweathermap.org/img/wn/" + todayIcon + "@2x.png" )
             $('.temp').text('Temp: ' + todayTemp + ' °F');
             $('.humidity').text('Humidity ' + todayHumidity + '%');
             $('.wind').text('Wind: ' + todayWind + ' MPH');
             
-
+            // Fetchs API for UV index, but it only uses lon and lat so had to get that from
+            // current weather API
             let lon=responce.coord.lon
             let lat=responce.coord.lat
             fetch(
@@ -46,7 +48,7 @@ function currentWeather(recentCity) {
             .then(function(data){
                 let uvIndex = data.current.uvi
                 $('.uv').text('UV Index: ' + uvIndex);
-                
+                // Rates the UV Index
                 if (data.current.uvi < 4) {
                     $('.uv').addClass('badge bg-success')
                 }else if(data.current.uvi < 5  && data.current.uvi > 8) {
@@ -67,6 +69,7 @@ function fiveDayForecast(recentCity) {
 
     let searchCity = document.getElementById('locationInput').value || recentCity;
 
+    // Fetches API for 5 day forcast, I gathred data for each day at 1200
     fetch(
         'https://api.openweathermap.org/data/2.5/forecast?q=' +
         searchCity +
