@@ -23,10 +23,12 @@
                     <label class="form-label">Search for a City:</label>
                     <input type="search" class="form-control" id="locationInput" placeholder="Search">
                 </div>
-                <button onclick="currentWeather()" id ="search-btn" type="button" class=" mt-1 btn btn-primary">Search</button>
+                
+                <button onclick="currentWeather()" id="search-btn" type="button"
+                    class=" mt-1 btn btn-primary">Search</button>
             </form>
             <div class="display-weather col-9 border border-secondary">
-                <h3 class="city"></h3>
+                <h3 class="city"></h3><img class="icon" src="">
                 <p class="temp"></p>
                 <p class="wind"></p>
                 <p class="humidity"></p>
@@ -35,41 +37,46 @@
         </div>
         <div class="row">
             <div class="search-history col-3">
-                <h5 class=" mt-2 text-center">Recent Searches:</h5>
+                <h5 class=" mt-2 text-center border-top">Recent Searches:</h5>
                 <div class="recent-cities"></div>
             </div>
             <div class="five-day-forecast col-9">
                 <h3>5-Day Forecast</h3>
                 <div class="row">
                     <div class=" cards day-one-card col">
-                        <h5 class="date-1">Date</h5>
-                        <p class="temp-1">Temp</p>
-                        <p class="wind-1">Wind</p>
-                        <p class="humidity-1">Humidity</p>
+                        <h5 class="date-1"></h5>
+                        <img class="icon-1" src="">
+                        <p class="temp-1"></p>
+                        <p class="wind-1"></p>
+                        <p class="humidity-1"></p>
                     </div>
                     <div class=" cards day-2-card col">
-                        <h5 class="date-2">Date</h5>
-                        <p class="temp-2">Temp</p>
-                        <p class="wind-2">Wind</p>
-                        <p class="humidity-2">Humidity</p>
+                        <h5 class="date-2"></h5>
+                        <img class="icon-2" src="">
+                        <p class="temp-2"></p>
+                        <p class="wind-2"></p>
+                        <p class="humidity-2"></p>
                     </div>
                     <div class=" cards day-3-card col">
-                        <h5 class="date-3">Date</h5>
-                        <p class="temp-3">Temp</p>
-                        <p class="wind-3">Wind</p>
-                        <p class="humidity-3">Humidity</p>
+                        <h5 class="date-3"></h5>
+                        <img class="icon-3" src="">
+                        <p class="temp-3"></p>
+                        <p class="wind-3"></p>
+                        <p class="humidity-3"></p>
                     </div>
                     <div class=" cards day-4-card col">
-                        <h5 class="date-4">Date</h5>
-                        <p class="temp-4">Temp</p>
-                        <p class="wind-4">Wind</p>
-                        <p class="humidity-4">Humidity</p>
+                        <h5 class="date-4"></h5>
+                        <img class="icon-4" src="">
+                        <p class="temp-4"></p>
+                        <p class="wind-4"></p>
+                        <p class="humidity-4"></p>
                     </div>
                     <div class=" cards day-5-card col">
-                        <h5 class="date-5">Date</h5>
-                        <p class="temp-5">Temp</p>
-                        <p class="wind-5">Wind</p>
-                        <p class="humidity-5">Humidity</p>
+                        <h5 class="date-5"></h5>
+                        <img class="icon-5" src="">
+                        <p class="temp-5"></p>
+                        <p class="wind-5"></p>
+                        <p class="humidity-5"></p>
                     </div>
                 </div>
 
@@ -78,13 +85,13 @@
         </div>
     </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="Assets/JavaScript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Assets/JavaScript/script.js"></script>
 </body>
 
 </html>
