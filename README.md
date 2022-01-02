@@ -1,26 +1,28 @@
 # Weather API
+This application allows users to to check information about the weather, as well as a 5-day forecast.
+![weather-api-example](Assets/Images/weather-api.png)
 
-## User Story
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+## Technologies
+`HTML/CSS`<br>
+`Javascript`<br>
+`Moment.js`<br>
+`jQuery`<br>
+`Bootstrap`<br>
+`Open Weather Map API`
 
-## Acceptance Criteria
+## Install
+To install this application simply clone this repository, open it in your code editor and open the [`index.html`](index.html) in your browser.
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
-## <a href = "https://spurgason.github.io/weather-api/">Deployed Application</a>
-<img src="Assets/Images/weather-api.png">
+## Usage 
+To use this application users can enter a city they would like see the weather for. Then users can the search for their city and see the current weather conditions including wind, humidity, and UV index. Additionally, this application shows a five-day forecast. 
+
+## Live Application 
+[Here](https://spurgason.github.io/weather-api/)
+
+## Contributor
+[Shane Purgason](https://github.com/spurgason)
+
+## Questions
+[Github](https://github.com/spurgason) <br>
+[Email](mailto:shanepurgason.98@gmail.com)
+
